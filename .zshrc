@@ -20,3 +20,5 @@ alias bitwarden='flatpak run com.bitwarden.desktop'
 alias spotify='flatpak run com.spotify.Client'
 alias atom='flatpak run io.atom.Atom'
 alias joplin='flatpak run net.cozic.joplin_desktop'
+
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
