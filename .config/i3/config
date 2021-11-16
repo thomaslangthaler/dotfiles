@@ -184,11 +184,5 @@ bar {
 	workspace_min_width 40 px
 }
 
-default_border pixel 1
+default_border pixel 2
 hide_edge_borders smart
-
-# assigne firefox to workspace 2, start on startup
-assign [class='Firefox'] 1
-exec firefox
-
-
