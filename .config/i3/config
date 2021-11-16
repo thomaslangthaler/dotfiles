@@ -184,5 +184,7 @@ bar {
 	workspace_min_width 40 px
 }
 
+bindsym $mod+Ctrl+l exec i3lock
+
 default_border pixel 2
 hide_edge_borders smart
