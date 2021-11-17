@@ -196,3 +196,4 @@ hide_edge_borders smart
 
 exec --no-startup-id xsetroot -solid '#333333'
 mouse_warping none
+focus_follows_mouse no
