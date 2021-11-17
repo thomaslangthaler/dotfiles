@@ -78,6 +78,10 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
+# move workspaces between screens
+bindsym $mod+Ctrl+semicolon move workspace to output right
+bindsym $mod+Ctrl+j move workspace to output left
+
 # split in horizontal orientation
 bindsym $mod+h split h
 
@@ -189,3 +193,6 @@ bindsym $mod+Ctrl+l exec i3lock
 
 default_border pixel 2
 hide_edge_borders smart
+
+exec --no-startup-id xsetroot -solid '#333333'
+mouse_warping none
