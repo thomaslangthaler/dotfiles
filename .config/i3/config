@@ -194,6 +194,8 @@ bindsym $mod+Ctrl+l exec i3lock
 default_border pixel 2
 hide_edge_borders smart
 
+bindsym $mod+p exec "~/.config/i3/keyboard_switch.sh"
+
 exec --no-startup-id xsetroot -solid '#333333'
 mouse_warping none
 focus_follows_mouse no
