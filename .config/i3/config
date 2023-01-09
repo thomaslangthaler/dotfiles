@@ -192,6 +192,7 @@ bar {
 bindsym $mod+Ctrl+l exec i3lock
 
 default_border pixel 2
+for_window [class=".*"] border pixel 2
 hide_edge_borders smart
 
 bindsym $mod+p exec "~/.config/i3/keyboard_switch.sh"
