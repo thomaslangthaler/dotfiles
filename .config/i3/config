@@ -195,6 +195,9 @@ default_border pixel 2
 hide_edge_borders smart
 
 bindsym $mod+p exec "~/.config/i3/keyboard_switch.sh"
+bindsym $mod+m exec "amixer -q sset Master toggle"
+bindsym $mod+KP_Add exec "pactl set-sink-volume 0 +5%"
+bindsym $mod+KP_Subtract exec "pactl set-sink-volume 0 -5%"
 
 exec --no-startup-id xsetroot -solid '#333333'
 mouse_warping none
