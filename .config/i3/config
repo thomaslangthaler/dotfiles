@@ -33,8 +33,8 @@ exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
@@ -189,16 +189,38 @@ bar {
 	tray_output primary
 }
 
+# shortcuts for screen lock and suspend
 bindsym $mod+Ctrl+l exec i3lock
+bindsym $mod+Shift+s exec i3lock && systemctl suspend
 
+# set default border style assign apps to workspaces
 default_border pixel 2
-for_window [class=".*"] border pixel 2
+# for_window [class=".*"] border pixel 2
 hide_edge_borders smart
+assign [class="^firefox$"] $ws1
+assign [class="^librewolf$"] $ws1
+assign [class="^Ferdium$"] $ws2
+assign [class="^Signal$"] $ws2
+assign [class="^thunderbird$"] $ws3
+assign [class="^Pulsar$"] $ws4
+assign [class="^Joplin$"] $ws7
+assign [class="^Spotify$"] $ws8
+assign [class="^Bitwarden$"] $ws10
 
-bindsym $mod+p exec "~/.config/i3/keyboard_switch.sh"
-bindsym $mod+m exec "amixer -q sset Master toggle"
-bindsym $mod+KP_Add exec "pactl set-sink-volume 0 +5%"
-bindsym $mod+KP_Subtract exec "pactl set-sink-volume 0 -5%"
+# automatically start frequently used applications
+exec --no-startup-id flatpak run io.gitlab.librewolf-community
+exec --no-startup-id pulsar
+exec --no-startup-id thunderbird
+exec --no-startup-id flatpak run org.ferdium.Ferdium
+exec --no-startup-id flatpak run org.signal.Signal
+exec --no-startup-id flatpak run net.cozic.joplin_desktop
+exec --no-startup-id flatpak run com.spotify.Client
+exec --no-startup-id flatpak run com.bitwarden.desktop
+
+bindsym $mod+p exec ~/.config/i3/keyboard_switch.sh && $refresh_i3status
+bindsym $mod+m exec amixer -q sset Master toggle && $refresh_i3status
+bindsym $mod+KP_Add exec --no-startup-id pactl set-sink-volume 0 +5% && $refresh_i3status
+bindsym $mod+KP_Subtract exec --no-startup-id pactl set-sink-volume 0 -5% && $refresh_i3status
 
 exec --no-startup-id xsetroot -solid '#333333'
 mouse_warping none
