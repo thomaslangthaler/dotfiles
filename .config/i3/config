@@ -218,6 +218,7 @@ exec --no-startup-id flatpak run com.spotify.Client
 exec --no-startup-id flatpak run com.bitwarden.desktop
 
 bindsym $mod+p exec ~/.config/i3/keyboard_switch.sh && $refresh_i3status
+bindsym $mod+c exec ~/.config/i3/clock_switch.sh && i3-msg restart
 bindsym $mod+m exec amixer -q sset Master toggle && $refresh_i3status
 bindsym $mod+KP_Add exec --no-startup-id pactl set-sink-volume 0 +5% && $refresh_i3status
 bindsym $mod+KP_Subtract exec --no-startup-id pactl set-sink-volume 0 -5% && $refresh_i3status
