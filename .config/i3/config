@@ -81,6 +81,8 @@ bindsym $mod+Shift+Right move right
 # move workspaces between screens
 bindsym $mod+Ctrl+semicolon move workspace to output right
 bindsym $mod+Ctrl+j move workspace to output left
+bindsym $mod+Ctrl+k move workspace to output down
+bindsym $mod+Ctrl+l move workspace to output up
 
 # split in horizontal orientation
 bindsym $mod+h split h
@@ -190,7 +192,7 @@ bar {
 }
 
 # shortcuts for screen lock and suspend
-bindsym $mod+Ctrl+l exec i3lock
+bindsym Ctrl+Shift+l exec i3lock
 bindsym $mod+Shift+s exec i3lock && systemctl suspend
 
 # set default border style assign apps to workspaces
