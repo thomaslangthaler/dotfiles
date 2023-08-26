@@ -193,7 +193,7 @@ bar {
 
 # shortcuts for screen lock and suspend
 bindsym Ctrl+Shift+l exec i3lock
-bindsym $mod+Shift+s exec i3lock && systemctl suspend
+bindsym $mod+Shift+s exec i3lock && setxkbmap -layout us && systemctl suspend
 
 # set default border style assign apps to workspaces
 default_border pixel 2
