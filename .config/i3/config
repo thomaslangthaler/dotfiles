@@ -206,6 +206,7 @@ assign [class="^Signal$"] $ws2
 assign [class="^thunderbird$"] $ws3
 assign [class="^Pulsar$"] $ws4
 assign [class="^Joplin$"] $ws7
+assign [class="^Logseq$"] $ws7
 assign [class="^Spotify$"] $ws8
 assign [class="^Bitwarden$"] $ws10
 
@@ -218,6 +219,7 @@ exec --no-startup-id flatpak run org.signal.Signal
 exec --no-startup-id flatpak run net.cozic.joplin_desktop
 exec --no-startup-id flatpak run com.spotify.Client
 exec --no-startup-id flatpak run com.bitwarden.desktop
+exec --no-startup-id ~/.local/bin/Logseq-linux-x64-0.9.15.AppImage
 
 bindsym $mod+p exec ~/.config/i3/keyboard_switch.sh && $refresh_i3status
 bindsym $mod+c exec ~/.config/i3/clock_switch.sh && i3-msg restart
@@ -228,3 +230,5 @@ bindsym $mod+KP_Subtract exec --no-startup-id pactl set-sink-volume 0 -5% && $re
 exec --no-startup-id xsetroot -solid '#333333'
 mouse_warping none
 focus_follows_mouse no
+
+# include ~/.config/i3/display.conf
