@@ -200,11 +200,12 @@ default_border pixel 2
 # for_window [class=".*"] border pixel 2
 hide_edge_borders smart
 assign [class="^firefox$"] $ws1
-assign [class="^librewolf$"] $ws1
+assign [class="^Librewolf$"] $ws1
 assign [class="^Ferdium$"] $ws2
 assign [class="^Signal$"] $ws2
-assign [class="^thunderbird$"] $ws3
+assign [class="^Mail$"] $ws3
 assign [class="^Pulsar$"] $ws4
+assign [class="^Chromium-browser$"] $ws6
 assign [class="^Joplin$"] $ws7
 assign [class="^Logseq$"] $ws7
 assign [class="^Spotify$"] $ws8
@@ -231,4 +232,4 @@ exec --no-startup-id xsetroot -solid '#333333'
 mouse_warping none
 focus_follows_mouse no
 
-# include ~/.config/i3/display.conf
+include ~/.config/i3/extra.conf
