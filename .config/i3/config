@@ -200,10 +200,10 @@ default_border pixel 2
 # for_window [class=".*"] border pixel 2
 hide_edge_borders smart
 assign [class="^firefox$"] $ws1
-assign [class="^Librewolf$"] $ws1
+assign [class="^LibreWolf$"] $ws1
 assign [class="^Ferdium$"] $ws2
 assign [class="^Signal$"] $ws2
-assign [class="^Mail$"] $ws3
+assign [class="^net.thunderbird.Thunderbird$"] $ws3
 assign [class="^Pulsar$"] $ws4
 assign [class="^Chromium-browser$"] $ws6
 assign [class="^Joplin$"] $ws7
@@ -212,12 +212,12 @@ assign [class="^Spotify$"] $ws8
 assign [class="^Bitwarden$"] $ws10
 
 # automatically start frequently used applications
-exec --no-startup-id flatpak run io.gitlab.librewolf-community
-exec --no-startup-id pulsar
+exec --no-startup-id librewolf
+exec --no-startup-id flatpak run dev.pulsar_edit.Pulsar
 exec --no-startup-id thunderbird
 exec --no-startup-id flatpak run org.ferdium.Ferdium
 exec --no-startup-id flatpak run org.signal.Signal
-exec --no-startup-id flatpak run net.cozic.joplin_desktop
+exec --no-startup-id flatpak run com.logseq.Logseq
 exec --no-startup-id flatpak run com.spotify.Client
 exec --no-startup-id flatpak run com.bitwarden.desktop
 exec --no-startup-id ~/.local/bin/Logseq-linux-x64-0.9.15.AppImage
