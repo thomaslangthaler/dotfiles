@@ -18,4 +18,4 @@ antigen apply
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias c='wl-copy'
 alias p='wl-paste'
-
+alias treekill='p | lp'
