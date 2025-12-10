@@ -16,5 +16,6 @@ antigen theme agnoster
 antigen apply
 
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-alias c='xsel --clipboard --input'
-alias p='xsel --clipboard --output'
+alias c='wl-copy'
+alias p='wl-paste'
+
