@@ -19,3 +19,5 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias c='wl-copy'
 alias p='wl-paste'
 alias treekill='p | paps --font="Monospace 10" | lp'
+
+export PATH="/home/pantokrator/.local/share/../bin:$PATH"
