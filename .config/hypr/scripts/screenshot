@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Usage: screenshot area|window|output|screen
+#   area    select a region
+#   window  the active window
+#   output  the focused monitor
+#   screen  all monitors
+# Copies the image to the clipboard, saves it to ~/Pictures/Screenshots and
+# shows a notification.
+
+case "$1" in
+    area)   target=area ;;
+    window) target=active ;;
+    output) target=output ;;
+    screen) target=screen ;;
+    *)      echo "usage: ${0##*/} area|window|output|screen" >&2; exit 1 ;;
+esac
+
+dir="$HOME/Pictures/Screenshots"
+mkdir -p "$dir"
+
+exec grimblast --notify copysave "$target" "$dir/$(date +%Y-%m-%d_%H-%M-%S).png"

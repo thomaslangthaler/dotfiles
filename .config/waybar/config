@@ -67,8 +67,8 @@
     },
     "custom/screenshot_t":{
         "format":" ",
-        "on-click": "~/.config/hypr/scripts/screenshot_full",
-        "on-click-right":"~/.config/hypr/scripts/screenshot_area"
+        "on-click": "~/.config/hypr/scripts/screenshot output",
+        "on-click-right": "~/.config/hypr/scripts/screenshot area"
     },
 
     "clock#1": {
