@@ -95,12 +95,12 @@ def on_move(ws, dest):
             continue  # Hyprland already chose the right one
 
         focused = next((n for n, m in monitors.items() if m["focused"]), name)
-        cmds = [f"dispatch workspace {target}"]
+        cmds = [f"hl.dispatch(hl.dsp.focus({{ workspace = {target} }}))"]
         if focused != name:
-            cmds = [f"dispatch focusmonitor {name}", *cmds,
-                    f"dispatch focusmonitor {focused}"]
+            cmds = [f'hl.dispatch(hl.dsp.focus({{ monitor = "{name}" }}))', *cmds,
+                    f'hl.dispatch(hl.dsp.focus({{ monitor = "{focused}" }}))']
         log(f"{name}: workspace {ws} left for {dest}, showing {target}")
-        hyprctl("--batch", " ; ".join(cmds))
+        hyprctl("eval", " ".join(cmds))
 
 
 def process(lines):

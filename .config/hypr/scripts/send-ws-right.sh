@@ -1,3 +1,2 @@
 #!/usr/bin/env bash
-hyprctl dispatch moveworkspacetomonitor "$(hyprctl activeworkspace -j | jq -r '.id')" 0
-
+hyprctl dispatch "hl.dsp.workspace.move({ workspace = $(hyprctl activeworkspace -j | jq -r '.id'), monitor = 0 })"
